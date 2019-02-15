@@ -7,9 +7,9 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashSet;
 
 @Entity
 @Table(name="employee_table")
@@ -33,11 +33,11 @@ public class Employee {
     @Column(name="salary")
     private Double salary;
 
-    @ElementCollection
+    @ElementCollection(fetch=FetchType.EAGER)
     @JoinTable(name="address_table",joinColumns=@JoinColumn(name="employee_id"))
     @GenericGenerator(name = "sequence-gen", strategy ="sequence")
     @CollectionId(columns = {@Column(name="address_id")}, generator = "sequence-gen", type = @Type(type = "int"))
-    private Collection<Address> addressList = new HashSet<>();
+    private Collection<Address> addressList = new ArrayList<>();
 
     public Integer getEmployeeId() {
         return employeeId;

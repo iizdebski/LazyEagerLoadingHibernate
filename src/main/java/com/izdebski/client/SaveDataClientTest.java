@@ -8,7 +8,7 @@ import org.hibernate.Session;
 
 import java.util.Date;
 
-public class ClientTest {
+public class SaveDataClientTest {
 
     public static void main(String[] args) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()) {

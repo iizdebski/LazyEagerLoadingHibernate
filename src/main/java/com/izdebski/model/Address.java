@@ -46,4 +46,14 @@ public class Address {
     public void setPincode(Long pincode) {
         this.pincode = pincode;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", pincode=" + pincode +
+                '}';
+    }
 }
