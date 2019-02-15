@@ -1,3 +1,1 @@
-# HibernateSavingCollection
-
-Saving Collections in Hibernate
+# Lazy and Eager loading in hibernate
